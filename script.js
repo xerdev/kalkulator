@@ -44,7 +44,7 @@ class Calculator {
     
     // Jika ada operasi sebelumnya, hitung dulu
     if (this.previousOperand !== '') {
-      this.compute();
+      this.compute(false); // Pass false karena ini bukan dari tombol =
     }
     
     this.operation = operation;
@@ -54,7 +54,7 @@ class Calculator {
   }
 
   // Fungsi untuk menghitung hasil (=)
-  compute() {
+  compute(playSound = false) {
     let computation;
     const prev = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
@@ -84,9 +84,8 @@ class Calculator {
     this.previousOperand = '';
     this.updateDisplay();
 
-    // --- PERMINTAAN AUDIO ANDA ---
-    // Memutar suara saat perhitungan selesai
-    if (this.audioPlayer) {
+    // Hanya memutar suara jika playSound = true (saat tombol = ditekan)
+    if (playSound && this.audioPlayer) {
       this.audioPlayer.currentTime = 0; // Reset audio ke awal
       this.audioPlayer.play().catch(error => {
         // Menangani error jika audio gagal diputar (misal: perlu interaksi user)
@@ -159,7 +158,7 @@ operationButtons.forEach(button => {
 });
 
 equalsButton.addEventListener('click', () => {
-  calculator.compute();
+  calculator.compute(true); // Pass true untuk memutar suara saat tombol = ditekan
 });
 
 allClearButton.addEventListener('click', () => {
