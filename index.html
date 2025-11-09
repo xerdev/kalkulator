@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Estetik</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+  <main>
+    <div class="calculator">
+      <div class="display">
+        <div data-previous-operand class="previous-operand"></div>
+        <div data-current-operand class="current-operand">0</div>
+      </div>
+
+      <div class="buttons">
+        <button data-all-clear class="btn-span-2 btn-clear">AC</button>
+        <button data-delete class="btn-clear">C</button>
+        <button data-operation class="btn-op">÷</button>
+        
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-operation class="btn-op">×</button>
+        
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation class="btn-op">-</button>
+        
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation class="btn-op">+</button>
+        
+        <button data-number>0</button>
+        <button data-number>.</button>
+        <button data-equals class="btn-span-2 btn-equals">=</button>
+      </div>
+    </div>
+  </main>
+
+  <audio id="result-sound" src="assets/audio/result.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

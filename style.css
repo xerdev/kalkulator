@@ -1,0 +1,141 @@
+/* --- Mengambil Variabel Tema dari Referensi Anda --- */
+:root {
+  --bg: #ffffff;
+  --accent-1: #FFDAB9; /* Peach */
+  --accent-2: #FFA07A; /* Light Salmon */
+  --muted: #6b6b6b;
+  --text-dark: #1A1A1A;
+  --shadow-lg: 0 15px 40px rgba(16,16,24,0.12);
+}
+
+/* --- Base Styles --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #fff, #FFFBF8); /* Latar belakang lembut */
+  color: var(--text-dark);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- Calculator Styling --- */
+.calculator {
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+/* --- Display Screen --- */
+.display {
+  background: #f9f9f9;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  text-align: right;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.previous-operand {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--muted);
+  min-height: 24px;
+}
+
+.current-operand {
+  /* Menggunakan font serif elegan untuk hasil */
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  min-height: 50px;
+}
+
+/* --- Button Grid --- */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* --- Button Styling --- */
+button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 16px;
+  padding: 20px 0; /* Padding vertikal */
+  cursor: pointer;
+  background: #fdfdfd;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  
+  /* Transisi halus seperti di referensi */
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.06);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+/* Mengatur tombol yang lebih lebar */
+.btn-span-2 {
+  grid-column: span 2;
+}
+
+/* --- Button Themes --- */
+
+/* Tombol Operator (Menggunakan --accent-2) */
+.btn-op {
+  background: var(--accent-1);
+  color: var(--text-dark);
+  font-size: 1.5rem;
+}
+.btn-op:hover {
+  background: var(--accent-2);
+}
+
+/* Tombol Clear (AC & C) */
+.btn-clear {
+  background: #f0f0f0;
+  color: var(--muted);
+}
+.btn-clear:hover {
+  background: #e0e0e0;
+}
+
+/* Tombol Equals (Gaya tombol primer dari referensi) */
+.btn-equals {
+  background: #111;
+  color: white;
+  font-size: 1.5rem;
+}
+.btn-equals:hover {
+  background: #333;
+}
